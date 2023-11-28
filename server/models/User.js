@@ -31,13 +31,25 @@ const UserSchema = new mongoose.Schema(
             min: 5,
         },
 
-        password: {
+        picturePath: {
             type: String,
-            required: true,
-            min: 5,
+            default: "",
         },
 
+        friends: {
+            type: Array,
+            default: [],
 
-    }
+        },
 
-)
+        location: String,
+        occupation: String,
+        viewedProfile: Number,
+        impressions: Number,
+
+    }, { timestamps: true }
+);
+
+const User = mongoose.model("User", UserSchema);
+export default User;
+
